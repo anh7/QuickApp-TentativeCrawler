@@ -28,7 +28,7 @@ namespace QuickApp
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-            builder.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"], b => b.MigrationsAssembly("QuickApp"));
+            builder.UseNpgsql(configuration["ConnectionStrings:DefaultConnection"], b => b.MigrationsAssembly("QuickApp"));
 
             return new ApplicationDbContext(builder.Options);
         }

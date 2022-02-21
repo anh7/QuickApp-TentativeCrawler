@@ -25,6 +25,7 @@ using QuickApp.Helpers;
 using System;
 using System.Collections.Generic;
 using AppPermissions = DAL.Core.ApplicationPermissions;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QuickApp
 {
@@ -48,7 +49,8 @@ namespace QuickApp
             //Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"], b => b.MigrationsAssembly("QuickApp")));
+                options.UseNpgsql(Configuration["ConnectionStrings:DefaultConnection"],
+                    b => b.MigrationsAssembly("QuickApp")));
 
             // add identity
             services.AddIdentity<ApplicationUser, ApplicationRole>()
