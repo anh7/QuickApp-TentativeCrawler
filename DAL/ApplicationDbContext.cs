@@ -24,6 +24,8 @@ namespace DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<KeywordFile> KeywordFiles { get; set; }
+        public DbSet<KeywordResult> KeywordResults { get; set; }
 
 
 
@@ -69,6 +71,14 @@ namespace DAL
             builder.Entity<OrderDetail>().ToTable($"App{nameof(this.OrderDetails)}");
             builder.Entity<OrderDetail>().Property(p => p.UnitPrice).HasColumnType(priceDecimalType);
             builder.Entity<OrderDetail>().Property(p => p.Discount).HasColumnType(priceDecimalType);
+
+            builder.Entity<KeywordFile>().ToTable(nameof(KeywordFiles));
+            builder.Entity<KeywordFile>().HasKey(f => f.Id);
+
+            builder.Entity<KeywordResult>().ToTable(nameof(KeywordResults));
+            builder.Entity<KeywordResult>().HasKey(r => r.Id);
+            builder.Entity<KeywordResult>().HasOne(r => r.KeywordFile).WithMany(r => r.KeywordResult)
+                .HasForeignKey(r => r.KeywordFileId);
         }
 
 
