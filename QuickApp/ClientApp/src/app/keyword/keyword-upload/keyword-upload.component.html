@@ -1,14 +1,32 @@
-<p>keyword-upload works!</p>
-<div class="keyword-upload-container container">
-  <div class="keyword-upload-form">
-    <input type="file"/>
-  </div>
-  <div class="keyword-upload-result">
-    <app-keyword-result [keyword]="'basketball shoes'">
-    </app-keyword-result>
-    <app-keyword-result [keyword]="'pharmacy'">
-    </app-keyword-result>
-    <app-keyword-result [keyword]="'pizza'">
-    </app-keyword-result>
+<div class="keyword-upload-container container container-sm">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="keyword-upload-form row">
+        <div class="keyword-upload-form-header text-center w-100">
+          <h3>Extract data from Google Search</h3>
+        </div>
+        <div class="custom-file col-md-6 offset-md-3">
+          <input type="file" class="custom-file-input" accept=".csv" id="keywordFile" required>
+          <label class="custom-file-label" for="keywordFile">Select your keyword file in CSV format</label>
+        </div>
+        <div class="keyword-upload-button col-md-6 offset-md-3 pt-3 text-center">
+          <button type="button" class="btn btn-primary">Upload</button>
+        </div>
+      </div>
+      <div class="keyword-upload-result row">
+        <div class="col-md-6 offset-md-3 pl-0 pb-5">
+          <app-keyword-result [keyword]="'basketball shoes'">
+          </app-keyword-result>
+        </div>
+        <div class="col-md-6 offset-md-3 pl-0 pb-5">
+          <app-keyword-result [keyword]="'pharmacy'">
+          </app-keyword-result>
+        </div>
+        <div class="col-md-6 offset-md-3 pl-0 pb-5">
+          <app-keyword-result [keyword]="'pizza'">
+          </app-keyword-result>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
