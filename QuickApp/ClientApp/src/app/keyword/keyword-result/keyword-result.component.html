@@ -1,0 +1,22 @@
+<p>keyword-result works!</p>
+<div class="keyworld-result-container">
+  <div class="keyword-result-header">
+    <div class="keyword-value">
+      <span>{{ keyword }}</span>
+    </div>
+  </div>
+  <div class="keyword-result-body">
+    <div class="keyword-adwords-advertiser-count">
+      <span>Total number of AdWords advertisers: <span class="keyword-data-count">{{keywordModel.adwordsAdvertiserCount}}</span></span>
+    </div>
+    <div class="keyword-link-count">
+      <span>Total number of links: <span class="keyword-data-count">{{keywordModel.linkCount}}</span></span>
+    </div>
+    <div class="keyword-search-stats">
+      <span>Total of search results: <span class="keyword-data-text">{{keywordModel.searchStatsText}}</span></span>
+    </div>
+    <div class="keyword-page-content">
+      <button onclick="handleViewCachedFirstPage()">View cached first page</button>
+    </div>
+  </div>
+</div>

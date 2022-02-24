@@ -13,7 +13,8 @@
 
       <div *ngIf="isUserLoggedIn" class="app-component collapse navbar-collapse menuItemsContainer">
         <ul class="app-component nav nav-pills flex-column flex-lg-row mr-auto">
-          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <!-- Unused menu items -->
+          <!-- <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
             <a class="nav-link" routerLink=""><i class="fa fa-home"></i></a>
           </li>
           <li class="nav-item" routerLinkActive="active" *ngIf="canViewCustomers">
@@ -27,7 +28,7 @@
           </li>
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" routerLink="/about">{{'mainMenu.About' | translate}}</a>
-          </li>
+          </li> -->
         </ul>
         <ul class="app-component nav nav-pills flex-column flex-lg-row mr-md-2">
           <li class="nav-item" routerLinkActive="active">

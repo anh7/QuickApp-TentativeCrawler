@@ -62,6 +62,8 @@ import { UserPreferencesComponent } from './components/controls/user-preferences
 import { UsersManagementComponent } from './components/controls/users-management.component';
 import { RolesManagementComponent } from './components/controls/roles-management.component';
 import { RoleEditorComponent } from './components/controls/role-editor.component';
+import { KeywordUploadComponent } from './keyword/keyword-upload/keyword-upload.component';
+import { KeywordResultComponent } from './keyword/keyword-result/keyword-result.component';
 
 
 @NgModule({
@@ -108,7 +110,9 @@ import { RoleEditorComponent } from './components/controls/role-editor.component
     AutofocusDirective,
     BootstrapTabDirective,
     BootstrapToggleDirective,
-    GroupByPipe
+    GroupByPipe,
+    KeywordUploadComponent,
+    KeywordResultComponent
   ],
   providers: [
     { provide: ErrorHandler, useClass: AppErrorHandler },
